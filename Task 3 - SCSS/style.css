@@ -1,0 +1,121 @@
+* {
+  background-color: #e2eff1;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+=============
+VARIABLES
+=============
+*/
+/* 
+=============
+MIXIN
+=============
+*/
+/* Mixin to Center Elements */
+/* Mixin For Media Queries */
+/* 
+=====================
+HEADER, MEDIA QUERIES
+=====================
+*/
+header {
+  background-color: #8ccff7;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* This applies from 621px and onwards */
+  /* This applies from 481px to 620px */
+  /* This applies from 481px to 620px */
+}
+header .pic-1, header .pic-2, header .pic-3 {
+  display: none;
+}
+@media screen and (min-width: 621px) and (max-width: 9999px) {
+  header .pic-1 {
+    display: block;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 620px) {
+  header .pic-2 {
+    display: block;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  header .pic-3 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 620px) {
+  .circ-container {
+    flex-direction: column; /* Stacks Circle Elements on Each Other */
+  }
+}
+.rec-container,
+.circ-container {
+  margin: 50px 0;
+}
+
+.rec-container .rec {
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.circ-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.circ-container .circle {
+  border-radius: 50%;
+  margin: 5px;
+}
+
+/* Loop for Row and Circle */
+.item-70px {
+  background-color: #4e89ae;
+  height: 70px;
+  width: 70px;
+}
+
+/* Loop for Row and Circle */
+.item-80px {
+  background-color: #43658b;
+  height: 80px;
+  width: 80px;
+}
+
+/* Loop for Row and Circle */
+.item-90px {
+  background-color: #ed6663;
+  height: 90px;
+  width: 90px;
+}
+
+/* Loop for Row and Circle */
+.item-100px {
+  background-color: #ffa372;
+  height: 100px;
+  width: 100px;
+}
+
+.circle,
+.rec {
+  cursor: pointer;
+  display: inline-block;
+}
+.circle:hover,
+.rec:hover { /* Adds Hover Design */
+  background-color: #444;
+}
+
+footer {
+  background-color: #8ccff7;
+  height: 50px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,126 @@
+* {
+  background-color: #e2eff1;
+  margin: 0;
+  padding: 0; 
+}
+
+/* 
+=============
+VARIABLES
+=============
+*/
+
+$bg-color: #8ccff7; 
+$object: ( /* Maps for Circle and Rectangle Row */
+  #4e89ae: 70px,
+  #43658b: 80px,
+  #ed6663: 90px,
+  #ffa372: 100px,
+);
+
+/* 
+=============
+MIXIN
+=============
+*/
+
+/* Mixin to Center Elements */
+@mixin center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mixin For Media Queries */
+@mixin breakpoint($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+/* 
+=====================
+HEADER, MEDIA QUERIES
+=====================
+*/
+
+header {
+  background-color: $bg-color;
+
+  @include center();
+
+  .pic-1, .pic-2, .pic-3 {
+    display: none;
+  }
+
+  /* This applies from 621px and onwards */
+  @include breakpoint(621px, 9999px) { 
+    .pic-1 {
+      display: block;
+    }
+  }
+
+  /* This applies from 481px to 620px */
+  @include breakpoint(481px, 620px) { 
+    .pic-2 {
+      display: block;
+    }
+  }
+
+  /* This applies from 481px to 620px */
+  @include breakpoint(0px, 480px) {
+    .pic-3 {
+      display: block;
+    }
+  }
+}
+
+@include breakpoint(0px, 620px) {
+  .circ-container { 
+    flex-direction: column; /* Stacks Circle Elements on Each Other */
+  }
+}
+
+.rec-container,
+.circ-container {
+  margin: 50px 0;
+}
+
+.rec-container {
+  .rec {
+    height: 50px;
+    width: 100%;
+    @include center();
+  }
+}
+
+.circ-container {
+  @include center();
+  .circle {
+    border-radius: 50%;
+    margin: 5px;
+  }
+}
+
+@each $color, $size in $object { /* Loop for Row and Circle */
+  .item-#{$size} {
+    background-color: $color;
+    height: $size;
+    width: $size;
+  }
+}
+
+.circle,
+.rec {
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover { /* Adds Hover Design */
+    background-color: #444;
+  }
+}
+
+footer {
+  background-color: $bg-color;
+  height: 50px;
+}

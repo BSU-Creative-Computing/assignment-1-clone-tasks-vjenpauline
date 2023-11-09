@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #eeeeee;
+  font-family: "Cairo";
+}
+
+/* Container for Header */
+header {
+  align-items: center;
+  background-color: dodgerblue;
+  color: white;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between; /* Distributes Items Evenly */
+  padding: 5px 15px 5px 15px;
+}
+
+input { /* Search Button */
+  border: 0;
+  display: inline-block;
+  min-width: 16%;
+  padding: 9px;
+}
+
+input:hover,
+input:focus {
+  letter-spacing: 2px;
+  transition: all 0.25s;
+}
+
+/* Navigation */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  margin: 3px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 1px solid;
+  color: black;
+  cursor: pointer;
+}
+
+nav li {
+  display: inline-block;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Container for Main Content */
+main {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Centers All Content */
+}
+
+.content {
+  font-size: 17px;
+  margin: 3px;
+}
+
+/* Container for Left Section */
+.left-container {
+  background-color: white;
+  box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 50%;
+  margin: 10px;
+}
+
+/* Container for Right Section */
+.right-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side-item {  /* Right Section Cards */
+  background-color: white;
+  box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.15);
+  margin: 10px;
+  padding: 10px;
+}
+
+.side-item p,
+.main-item p {
+  line-height: 25px;
+}
+
+.left-container img,
+.side-item img {
+  width: 100%;
+}
+
+.left-container .content {
+  margin: 0 15px;
+}
+
+.left-container button {
+  margin-bottom: 15px;
+}
+
+button { /* CSS of Button for Right Section Cards */
+  background: dodgerblue;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  float: right;
+  margin-top: 20px;
+  padding: 9px;
+}
+
+button:hover {
+  background-color: white;
+  border: 0.5px solid dodgerblue;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* 
+=============
+MEDIA QUERIES
+=============
+*/
+
+/* This applies from 1280px onwards */
+@media screen and (min-width: 1280px) {
+  .drawer {
+    display: none;
+  }
+
+  main {
+    max-width: 1280px;
+  }
+
+  /* Divides Right Side Cards to Two Columns */
+  .left-container {
+    flex-basis: 60%;
+  }
+
+  .right-container {
+    flex-basis: 40%;
+  }
+
+  .main-item {
+    flex: 1 1 60%;
+  }
+
+  .side-item { 
+    flex: 1 1 40%;
+  }
+}
+
+/* This applies from 1024px to 1280px */
+@media screen and (max-width: 1280px) {
+  .drawer {
+    display: none;
+  }
+
+  .left-container {
+    flex-basis: 60%;
+  }
+
+  .right-container {
+    flex-basis: 40%;
+  }
+
+  .main-item {
+    flex: 1 1 60%;
+  }
+
+  .side-item {
+    flex: 1 1 40%;
+  }
+}
+
+/* This applies from 800px to 1024px */
+@media screen and (max-width: 1024px) {
+  .drawer {
+    display: none;
+  }
+
+  main {
+    max-width: 1024px;
+  }
+
+  .left-container {
+    flex-basis: 90%; 
+  }
+
+  .side-item {
+    flex: 1 1 50%;
+  }
+}
+
+/* This applies from 480px to 800px */
+@media screen and (max-width: 800px) {
+
+  input,
+  ul { /* Removes Navigation Bar with 4 'Buttons' */
+    display: none;
+  }
+
+  .drawer { /* Shows 1 'Button' named Menu */
+    display: unset;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .side-item { /* Divides to Two Columns */
+    flex: 1 1 40%;
+  }
+}
+
+/* This applies from 0px to 480px */
+@media screen and (max-width: 480px) {
+  main {
+    flex-direction: column;
+  }
+
+  .side-item { /* Stacks Card Items on Each Other*/
+    flex: 1 1 50%;
+  }
+}

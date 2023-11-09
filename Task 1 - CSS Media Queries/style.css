@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro");
+
+body { /* Formatting of Body */
+  background-color: lightgray;
+  font-family: Anonymous Pro;
+  font-size: 1em;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.header {
+  padding: 1rem;
+}
+
+.logo {
+    width: 3.7rem;
+}
+
+.container { 
+  background-color: white;
+  margin: auto;
+  width: 1024px; /* Centers Everything */
+}
+
+.image-gallery { /* Arranging Images */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.text-container { 
+  padding: 0 1.5rem 0 1.5rem;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 0.1rem;
+  text-align: center;
+}
+
+/* 
+=============
+MEDIA QUERIES
+=============
+*/
+
+/* This applies from 1024px onwards */
+@media screen and (min-width: 1025px) {
+  img {
+    width: calc(100% / 3); /* Puts Images in Three Columns */
+  }
+}
+
+/* This applies from 1024px to 800px */
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  img {
+    width: calc(100% / 3); 
+  }
+}
+
+/* This applies from 800px to 480px */
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: 800px;
+  }
+
+  img {
+    width: calc(100% / 2); /* Puts Images in Two Columns */
+  }
+}
+
+/* This applies from 0px to 480px */
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+
+  img {
+    width: calc(100% / 1); /* Puts Images in One Column */
+  }
+}
